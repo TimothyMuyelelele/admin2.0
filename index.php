@@ -3,7 +3,7 @@
 <html>
 <head>
 	<title>Home</title>
-	<?php  include('includes/headerckl.php') ?>
+	<?php  include('includes/header.php') ?>
 	
 </head>
 <body>
@@ -71,7 +71,6 @@
 			</div>
 		</div>
 	</div>
-<script src="jquery.min.js"></script>
-<script src="bootstrap/js/bootstrap.min.js"></script>
+<?php include('includes/scripts.php') ?>
 </body>
 </html>

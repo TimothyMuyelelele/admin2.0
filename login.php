@@ -74,7 +74,6 @@
         </div>
       </form>   
     </div>
-<script src="jquery.min.js"></script>
-<script src="bootstrap/js/bootstrap.min.js"></script>
+    <?php include('includes/scripts.php') ?>
 </body>
 </html>
