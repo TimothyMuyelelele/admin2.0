@@ -3,7 +3,7 @@
 
 include('logics/dbconnection.php');
 
-$sql=mysqli_query($conn, "SELECT * FROM enrollments");
+$sql=mysqli_query($conn, "SELECT * FROM enrollment");
 
 
 

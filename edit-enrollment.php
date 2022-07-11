@@ -1,7 +1,7 @@
 <?php
 
    require_once('logics/dbconnection.php');
-   $queryStudent=mysqli_query($conn,"SELECT * FROM enrollments WHERE no='".$_GET['id']."'  ");
+   $queryStudent=mysqli_query($conn,"SELECT * FROM enrollment WHERE no='".$_GET['id']."'  ");
    while($fetchStudent=mysqli_fetch_array($queryStudent))
    {
     $fullname= $fetchStudent['fullname'];

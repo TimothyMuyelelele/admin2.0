@@ -1,6 +1,6 @@
 <?php
  
-   require_once('connection.php');
+   require_once('logics/dbconnection.php');
 
    if(isset($_POST['signUp']))
    {
