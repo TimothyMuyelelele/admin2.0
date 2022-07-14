@@ -30,8 +30,18 @@ $sql=mysqli_query($conn, "SELECT * FROM enrollment");
                <table class="table table-hover table-striped table-responsive" style="font-size:12px">
                   <thead>
 					
-					<div class="card-header bg-dark text-white text-center">
-						<span>Students</span>
+					<div class="card-header bg-dark text-white ">
+						
+					<div class="row ">
+                                <a href="index.php">
+                                    <button type="button" class="btn btn-dark ">
+                                       <span> <i class="fa fa-arrow-left" > <span>Go back</span> </i> </span>
+                                      
+                                    </button>
+                                </a>
+                                <h4 class="text-center col-9 ">Students</h4>
+                                
+                            </div>
 					</div>
 				
                     <tr>
