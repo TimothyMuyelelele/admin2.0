@@ -1,0 +1,90 @@
+<?php 
+ require_once('logics/dbconnection.php');
+  
+
+   $sqli=mysqli_query($conn, "SELECT * FROM contact_us");
+
+   
+   ?>
+   <!DOCTYPE html>
+
+<html>
+<head>
+	<title>Messages</title>
+	<?php  include('includes/header.php') ?>
+	
+</head>
+<body>
+	 <!-- All our code. write here   -->
+	 <?php include('includes/navbar.php');?>
+	 
+	 <?php include('includes/sidebar.php'); ?>
+
+	<div class="main-content">
+		<div class="container-fluid">
+		  <div class="card">
+            <div class="card-body">
+               <table class="table table-hover table-striped table-responsive" style="font-size:16px">
+                  <thead>
+					
+					<div class="card-header bg-dark text-white ">
+						
+					<div class="row ">
+                                <a href="index.php">
+                                    <button type="button" class="btn btn-dark ">
+                                       <span> <i class="fa fa-arrow-left" > <span>Go back</span> </i> </span>
+                                      
+                                    </button>
+                                </a>
+                                <h4 class="text-center col-9 ">Messages</h4>
+                                
+                            </div>
+					</div>
+				
+                    <tr>
+                      <th scope="col">id</th>
+                      <th scope="col">First name</th>
+                      <th scope="col">Last name</th>
+                      <th scope="col">Email </th>
+					  <th scope="col">Phonenumber</th>
+					  <th scope="col-span">message</th>
+                      <th scope="col">Delete message</th>
+                      
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <?php while($fetch=mysqli_fetch_array($sqli)) { ?>
+						<tr>
+                      <th scope="row"><?php  echo $fetch['id'] ?></th>
+                      <td><?php  echo $fetch['firstname'] ?></td>
+                      <td><?php  echo $fetch['lastname'] ?></td>
+					  <td><?php  echo $fetch['email'] ?></td>
+					  <td><?php  echo $fetch['phonenumber'] ?></td>
+					  <td><?php  echo $fetch['message'] ?> </td>
+				
+					  <td>
+						
+						<a href="delete-message.php?id=<?php  echo $fetch['id'] ?> ">
+                        <button type="button" class="btn btn-danger ">
+                                       <span><i class="fa fa-trash"> <span>Delete</span> </i>  </span>
+                        </button>
+						</a>
+					</td>
+                    </tr>
+					<?php   }     ?>
+                  </tbody>
+               </table> 
+
+
+
+
+
+
+            </div>
+          </div>
+			
+		</div>
+	</div>
+	<?php include('includes/scripts.php') ?>
+</body>
+</html>
