@@ -1,5 +1,5 @@
 <?php
-  
+  session_start();
   //database connection
   require_once('logics/dbconnection.php');
   //setting
@@ -16,7 +16,7 @@
 
   if($fetch > 0)
   {
-    
+    $_SESSION['login']= $username;
     
     header('location: index.php');
   }
@@ -48,7 +48,7 @@
 	</div>
     <div class="container p-5">
         <div class="row ">
-            <img src="zalego.png" alt="zalego training-Admin log in" class="mx-auto">
+            <img src="zalego.png" alt="zalego training-Admin log in" class="mx-auto rounded-circle p-3">
         </div>
 
       <form action="login.php" method="POST"> 

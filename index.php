@@ -1,4 +1,7 @@
 <?php
+
+  
+
  require_once('logics/dbconnection.php');
  $queryEnrollStudents=mysqli_query($conn, "SELECT * FROM enrollment" );
  $countAllStudents=mysqli_num_rows($queryEnrollStudents);

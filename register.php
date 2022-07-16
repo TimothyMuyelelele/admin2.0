@@ -20,7 +20,7 @@
 	</div>
     <div class="container p-5">
         <div class="row ">
-            <img src="zalego.png" alt="zalego-Admin" class="mx-auto">
+            <img src="zalego.png" alt="zalego-Admin" class="mx-auto rounded-circle p-3">
            
         </div>
         <div class="mx-auto">
