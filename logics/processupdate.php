@@ -1,7 +1,7 @@
 <?php
+require_once('logics/dbconnection.php');
 //updating user records
-   if(isset($_POST['updateenroll']))
-
+   if(isset($_POST['update1']))
    {
     //fetch form data
     $fullname= $_POST['fullname'];

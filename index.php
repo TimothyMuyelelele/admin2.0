@@ -1,6 +1,6 @@
 <?php
 
-  
+  $message1="";
 
  require_once('logics/dbconnection.php');
  $queryEnrollStudents=mysqli_query($conn, "SELECT * FROM enrollment" );

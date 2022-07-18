@@ -3,6 +3,17 @@
    require_once('logics/dbconnection.php');
    $queryStudent=mysqli_query($conn,"SELECT * FROM enrollment WHERE no='".$_GET['id']."'  ");
    while($fetchStudent=mysqli_fetch_array($queryStudent))
+   {
+    $fullname= $fetchStudent['fullname'];
+    $phonenumber=$fetchStudent['phonenumber'];
+    $email=$fetchStudent['email'];
+    $gender=$fetchStudent['gender'];
+    $course=$fetchStudent['course']; 
+    $id=$fetchStudent['no'];
+
+   }
+  require_once('logics/processupdate.php');
+   
    
 ?>
 
@@ -40,7 +51,7 @@
                             <div class="text-center text-success"><?php echo $message?></div>
                         </div>
                         <div class="card-body">
-                             <form action="edit-enrollment.php?id=<?php echo $id ?>" method="POST" class="row g-3 needs-validation " name="no"  novalidate>
+                            <form action="edit-enrollment.php?id=<?php echo $id ?>" method="POST" class="row g-3 needs-validation " name="no"  novalidate>
                                  
                  
                                  <div class="col-md-5 mx-auto">
@@ -136,10 +147,10 @@
                                  <br>
                                  <br>
                                  <div class="col-12 mt-2">
-                                     <button class="btn btn-primary" name="updateenroll" type="submit">Update records</button>
+                                     <button class="btn btn-primary" name="update1" type="submit">Update records</button>
                                  </div>
                  
-                             </form>
+                            </form>
                         </div>
                     </div>
                 </div>
