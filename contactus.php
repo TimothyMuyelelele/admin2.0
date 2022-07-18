@@ -62,13 +62,11 @@
                     <a href="edit-message.php?id=<?php  echo $fetch['id'] ?> " class="btn btn-danger btn-sm">
 					                  <i class="fa fa-edit"></i>    
 						          </a>					        	 
-                      <a href="view-message.php?id=<?php  echo $fetch['id'] ?> " class="btn btn-info btn-sm">
+                      <a href="view-messages.php?id=<?php  echo $fetch['id'] ?> " class="btn btn-info btn-sm">
                             <i class="fa fa-eye"></i>
 						         </a>		
-                     <a href="delete-message.php?id=<?php  echo $fetch['id'] ?> ">
-                        <button type="button" class="btn btn-danger ">
-                          <span><i class="fa fa-trash">  </i>  </span>
-                        </button>
+                     <a href="delete-message.php?id=<?php  echo $fetch['id'] ?> " class="btn btn-danger btn-sm">                        
+                        <i class="fa fa-trash">  </i> 
 					        	  </a>				
 						         
 					                  </td>
