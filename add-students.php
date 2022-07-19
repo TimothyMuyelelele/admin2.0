@@ -1,14 +1,5 @@
 <?php
-
-
-include('logics/dbconnection.php');
-
-include("penroll.php");
-$sql=mysqli_query($conn, "SELECT * FROM enrollment");
-
-
-
-
+include("penroll.php")
 ?>
 <!DOCTYPE html>
 
@@ -28,97 +19,32 @@ $sql=mysqli_query($conn, "SELECT * FROM enrollment");
 		<div class="container-fluid">
 		  <div class="card">
             <div class="card-body">
-               <table class="table table-hover table-striped table-responsive" style="font-size:12px">
-                  <thead>
-					
-					<div class="card-header bg-dark text-white ">
-						
+				<div class="card-header bg-dark text-white ">
 					<div class="row ">
-                                <a href="index.php">
+                                <a href="student.php">
                                     <button type="button" class="btn btn-dark ">
                                        <span> <i class="fa fa-arrow-left" > <span>Go back</span> </i> </span>
                                       
                                     </button>
                                 </a>
                                 <h4 class="text-center col-9 ">Students</h4>
-								<a href="#" class="btn btn-danger btn-lg pull-right  " data-toggle="modal" data-target="#addUserForm">
-									<i class="fa fa-plus-circle"></i>
-                                </a> 
+								
                                 
-                            </div>
-					</div>
-				
-                    <tr>
-                      <th scope="col">id</th>
-                      <th scope="col">Full name</th>
-                      <th scope="col">Phone number</th>
-                      <th scope="col">Email </th>
-					  <th scope="col">Course</th>
-					  <th scope="col">gender</th>
-					  <th scope="col">enrolled on</th>
-					  <th scope="col">Action</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <?php while($fetch=mysqli_fetch_array($sql)) { ?>
-						<tr>
-                      <th scope="row"><?php  echo $fetch['no'] ?></th>
-                      <td><?php  echo $fetch['fullname'] ?></td>
-                      <td><?php  echo $fetch['phonenumber'] ?></td>
-					  <td><?php  echo $fetch['email'] ?></td>
-					  <td><?php  echo $fetch['course'] ?></td>
-					  <td><?php  echo $fetch['gender'] ?> </td>
-					  <td><?php  echo $fetch['created_at'] ?> </td>
-					  <td>
-						<a href="edit-enrollment.php?id=<?php  echo $fetch['no'] ?> " class="btn btn-primary btn-sm">
-						   <i class="fa fa-edit"></i>
-						</a>
-						
-						<a href="view-enrollment.php?id=<?php  echo $fetch['no'] ?> " class="btn btn-info btn-sm">
-                            <i class="fa fa-eye"></i>
-						</a>
-						
-						<a href="delete-enrollment.php?id=<?php  echo $fetch['no'] ?> " class="btn btn-danger btn-sm">
-					        <i class="fa fa-trash"></i>    
-						</a>
-					</td>
-                    </tr>
-					<?php   }     ?>
-                  </tbody>
-               </table> 
-
-
-
-
-
-
-            </div>
-          </div>
-			
-		</div>
-	</div>
-
-	<div class="modal fade"id="addUserForm" tabindex="-1" role="dialog" aria-hidden="true">
-		<div class="modal-dialog" >
-			<div class="modal-content">
-				<div class="modal-header">
-					<h4 class="modal-title" id="ModalLabel">Register now</h4>
-					<button type="button" class="close" data-dismiss="modal" aria-Label="close">
-						<span aria-hidden="true">x</span>
-					</button>
-				</div>
-				<div class="modal-body">
-                   <h3>Modal body</h3>
-				   <form action="add-students.php" method="POST" class="row g-3 needs-validation "   novalidate>
-                        
-                         <div class="col-md-12 pb-3 ">
+                    </div>
+	    		</divfw-bold text-cent>
+                     <!-- <h1 class="er pb-3">
+                         Sign up today ?
+                     </h1> -->
+                     <form action="add-students.php" method="POST" class="row g-3 needs-validation "   novalidate>
+                        <div class="row mx-auto " >
+                         <div class="col-md-12 ">
                             <?php if( $enroll) 
                               {
                                include("resenroll.php");
                               }
                                    ?>
                           </div>
-                      
+                      <!-- </div>
                          <div class="col-md-5 mx-auto">
                              <label for="name" class="form-label fw-semibold" style="font-size:16px">Full name</label> 
                              <input type="text" class="form-control form-control-lg shadow-sm p-3 mb-5 bg-body rounded "name="fullname" id="name" placeholder="Enter your full name" required>
@@ -166,7 +92,12 @@ $sql=mysqli_query($conn, "SELECT * FROM enrollment");
                                  please choose your gender
                              </div>
                          </div>
-                         
+                         <div class="col-md-12 pt-5">
+                             <p class="text-center fs-5">
+                                 In order to complete your registration to the bootcamp, you are required to select one course you will be <br>
+                                 undertaking. Please NOTE that this will be your learning track during the 2-weeks immersion.
+                             </p>
+                         </div>
                          <div class="col-md-7 pt-2 ms-5">
                          <label for="courses"class="form-label fw-semibold "style="font-size:16px" >what's your prefered course</label>
                                      <select name="course" class="custom-select custom-select-lg shadow-sm" >
@@ -187,7 +118,11 @@ $sql=mysqli_query($conn, "SELECT * FROM enrollment");
                                   </div>
          
                          </div>
-                         
+                         <div class="col-md-12 pt-2">
+                             <p class="text-center fs-5 "style="font-size:16px">
+                                 You agree by providing your information you understand all our data privacy and protection policy <br>
+                                 Outlined in our terms & condition and the Privacy PolIicy statements.
+                             </p>
                          </div>
                          <div class="col-12">
                              <div class="form-check">
@@ -205,18 +140,15 @@ $sql=mysqli_query($conn, "SELECT * FROM enrollment");
                               </div>
          
                      </form>
-                
+                 </div>
+              </div>
               
-              
-       	
-				</div>
-				<div class="modal-footer">
-                    <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-dark btn-sm" >Save changes</button>
-				</div>
-			</div>
+      </form>    	
+            </div>
+          </div>
+			
 		</div>
-	</div>
-<?php include('includes/scripts.php') ?>
+	</div> -->
+	<?php include('includes/scripts.php') ?>
 </body>
 </html>
