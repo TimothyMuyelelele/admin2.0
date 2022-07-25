@@ -31,6 +31,12 @@
 						<span>Messages</span>
 					</a>	
 			    </li>
+				<li>
+					<a href="subscribers.php">
+						<span><i class="fa fa-play-circle"></i></span>
+						<span>Subscribers</span>
+					</a>	
+			    </li>
 			</ul>
 		</nav>
 	</div>
